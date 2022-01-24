@@ -3,7 +3,6 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 import cmath
 
-#! Графики кривых по х и у от t
 def graph(t,S,j):
    plt.plot(t, S[:,0], 'o-', linewidth = 1, label ='x(t)')
    plt.plot(t, S[:,1], 'o-', linewidth = 1, label ='y(t)')
@@ -18,7 +17,6 @@ def graph(t,S,j):
    plt.savefig(name+'.png', bbox_inches='tight')
    plt.show()
 
-#! Фазовый портрет
 def plot(t,S,j):
    plt.plot(S[:,0], S[:,1], 'o-', linewidth = 1)
    plt.axis([-20, 20, -20, 20])
@@ -32,13 +30,8 @@ def plot(t,S,j):
    plt.savefig(name+'.png', bbox_inches='tight')
    plt.show()
 
-   #! Координаты кривых от времени
-   for i in range(0, len(t)):
-      print('t = ', i, '   ', 'x = ', S[i,0], '  ', 'y = ', S[i,1])
+ 
 
-
-
-#! График АФЧХ
 def plot_afch(AFCH,j):
    plt.plot(AFCH.real, AFCH.imag, 'o-', label = 'АФЧХ')
    plt.xlabel('Re')
@@ -65,8 +58,7 @@ def plot_ach(t,ACH,j):
       name='ACH_focus'
    plt.savefig(name+'.png', bbox_inches='tight')
    plt.show()
-#
-#! График ФЧХ
+
 def plot_fch(t,FCH,j):
    plt.plot(t, FCH, 'o-', label = 'ФХЧ')
    plt.xlabel('v')
@@ -102,10 +94,6 @@ if __name__=='__main__':
 
       graph(t,S,j)
       plot(t,S,j)
-   #------------------------------------------------------------------------------------------#
-
-      #! Вычисление АФЧХ, АЧХ, ФЧХ и их графики
-      #* Параметры системы
       a = 2
       i = 0
 
